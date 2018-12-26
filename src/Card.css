@@ -1,0 +1,52 @@
+.card-container {
+    background-color: #4D9DE0;
+    border-radius: .8rem;
+    
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 13rem;
+    width: 13rem;
+    padding: .2rem;
+    margin: .2rem;
+    border: .18rem solid #EEF4D4;
+
+    transition: all 1.5s .3s ease-in;
+} 
+
+.card-container:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 75em){
+    .card-container {
+        height: 13rem;
+        width: 13rem;
+    }
+}
+
+@media (max-width: 56.25em){
+    .card-container {
+        height: 12rem;
+        width: 12rem;
+    }
+}
+
+@media (max-width: 37.5em){
+    .card-container {
+        height: 10.5rem;
+        width: 10.5rem;
+    }
+}
+
+@media (min-width: 112.5em){
+    .card-container {
+        height: 15rem;
+        width: 15rem;;
+    }
+}
+

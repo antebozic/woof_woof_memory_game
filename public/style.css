@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  background-color: #FA7268;
+  font-family: 'Merriweather', serif;
+  /* 10/16=0.625 this defines what 1rem is   1rem is 10px*/
+}
+
+body {
+  box-sizing: border-box; 
+}
+
+@media (max-width: 75em){
+    html {
+        font-size: 56.25%; /* 1rem = 9px, 9/16=56.25% */
+    }
+}
+
+@media (max-width: 56.25em){
+    html {
+        font-size: 50%; /* 1rem = 8px, 8/16=50% */
+    }
+}
+
+@media (min-width: 112.5em){
+    html {
+        font-size: 75%; /* 1rem = 12px, 12/16=75% */
+    }
+}

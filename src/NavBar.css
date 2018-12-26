@@ -1,0 +1,61 @@
+header {
+    padding: 2rem 4rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7vh;
+    font-family: 'Inconsolata', monospace;
+}
+h2 {
+    font-size: 2.2rem;
+}
+
+nav {
+    font-size: 2.4rem;
+    letter-spacing: .2rem;
+}
+
+li {
+    list-style: none;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px;
+}
+
+#slide {
+    all: unset;
+    transition: color .3s ease-in-out;
+    position: relative;
+}
+
+#slide:hover {
+    cursor: pointer;
+    color: #EEF4D4;
+}
+
+#slide::before {
+    cursor: pointer;
+    color: #EEF4D4;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: .15rem;
+    width: 100%;
+    background-color: #EEF4D4;
+    transform: scaleX(0);
+    transition: transform .5s .1s;
+
+}
+#slide:hover::before {
+    transform: scaleX(1); 
+}
+
+@media (max-width: 56.25em){
+    header {
+        padding: 1rem 1rem 0;
+    }
+}
