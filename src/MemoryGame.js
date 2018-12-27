@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import shuffle from 'shuffle-array';
 import NavBar from './NavBar';
 import Card from './Card';
 import Dog from './Dog';
@@ -42,7 +41,7 @@ export default class MemoryGame extends Component {
             {id: 19, cardState: CardState.HIDING, backgroundColor: 'white', backgroundImage: ''}
         ];
 
-        cards = shuffle(cards);
+        cards = this.shuffle(cards);
 
         this.state = {
             cards, noClick: false, isVis: true
@@ -51,7 +50,21 @@ export default class MemoryGame extends Component {
         this.handleClick = this.handleClick.bind(this);
         this.handleNewGame = this.handleNewGame.bind(this);
         this.getAllDogs = this.getAllDogs.bind(this);
+        this.shuffle = this.shuffle.bind(this);
     }
+
+    shuffle(arr) {
+        var i,
+            j,
+            temp;
+        for (i = arr.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+        return arr;    
+    };
 
     getAllDogs() {
         let dogs = []
@@ -123,7 +136,7 @@ export default class MemoryGame extends Component {
             cardState: CardState.HIDING
         }));
 
-        cards = shuffle(cards);
+        cards = this.shuffle(cards);
 
         this.setState({cards});
 
