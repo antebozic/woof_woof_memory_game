@@ -59,6 +59,7 @@ export default class MemoryGame extends Component {
             axios
             .get('https://dog.ceo/api/breeds/image/random')
             .then( res => dogs.push(res.data.message))
+            .catch( err => console.log(err))
         }
         setTimeout(
           () => {
