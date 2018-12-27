@@ -3,7 +3,8 @@
 .bg {
     background-color: #FA7268;
     height: 100vh;
-    padding: 150px 0;
+    width: 100vw;
+    padding: 14rem 0;
   }
   
   #dog {
@@ -221,14 +222,14 @@
   /*Loading...*/
 
   .spinner {
-    margin: 100px auto 0;
+    margin: 30px auto 0;
     width: 70px;
     text-align: center;
   }
   
   .spinner > div {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     background-color: #4D9DE0;
   
     border-radius: 100%;
@@ -259,5 +260,11 @@
     } 40% { 
       -webkit-transform: scale(1.0);
       transform: scale(1.0);
+    }
+  }
+
+  @media (max-width: 37.5em) {
+    .bg {
+      padding: 9rem 0;
     }
   }

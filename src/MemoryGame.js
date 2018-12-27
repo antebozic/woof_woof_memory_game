@@ -209,19 +209,19 @@ export default class MemoryGame extends Component {
         ));
 
 
-        // let style = {};
-        // if (!this.state.isVis) {
-        //     style.display = 'grid'
-        // }
-        // else if(this.state.isVis) {
-        //     style.display = 'none'
-        // }
+        let style = {};
+        if (!this.state.isVis) {
+            style.display = 'grid'
+        }
+        else if(this.state.isVis) {
+            style.display = 'none'
+        }
 
         return (
             <div className="container">
                 <NavBar onNewGame={this.handleNewGame}/>
                 <div className="content">
-                <div className="cardsContainer">
+                <div className="cardsContainer" style={style}>
                 {cards}
                 </div>
                 </div>
