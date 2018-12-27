@@ -1,13 +1,13 @@
 {
-  "main.css": "/woof/static/css/main.2b3840a0.chunk.css",
-  "main.js": "/woof/static/js/main.1e8e6cb4.chunk.js",
-  "main.js.map": "/woof/static/js/main.1e8e6cb4.chunk.js.map",
+  "main.css": "/woof/static/css/main.cca7ee0f.chunk.css",
+  "main.js": "/woof/static/js/main.0827f8dd.chunk.js",
+  "main.js.map": "/woof/static/js/main.0827f8dd.chunk.js.map",
   "static/js/1.f20b9046.chunk.js": "/woof/static/js/1.f20b9046.chunk.js",
   "static/js/1.f20b9046.chunk.js.map": "/woof/static/js/1.f20b9046.chunk.js.map",
   "runtime~main.js": "/woof/static/js/runtime~main.d38e75a6.js",
   "runtime~main.js.map": "/woof/static/js/runtime~main.d38e75a6.js.map",
-  "static/css/main.2b3840a0.chunk.css.map": "/woof/static/css/main.2b3840a0.chunk.css.map",
+  "static/css/main.cca7ee0f.chunk.css.map": "/woof/static/css/main.cca7ee0f.chunk.css.map",
   "index.html": "/woof/index.html",
-  "precache-manifest.960ea6b04b4f8652770b25d31417c977.js": "/woof/precache-manifest.960ea6b04b4f8652770b25d31417c977.js",
+  "precache-manifest.729d4ef43e7483b04db9f7e671161e85.js": "/woof/precache-manifest.729d4ef43e7483b04db9f7e671161e85.js",
   "service-worker.js": "/woof/service-worker.js"
 }
