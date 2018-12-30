@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Card.css'
 
 const Card = (props) => {
@@ -10,7 +9,6 @@ const Card = (props) => {
     if (props.opacity) {
         style.filter = 'grayscale(100%)'
         style.border = '.18rem solid #000'
-        // style.opacity = '.8'
     } 
     return (
         <div 
@@ -20,10 +18,5 @@ const Card = (props) => {
         </div>
     )
 };
-
-Card.propTypes = {
-    showing: PropTypes.bool.isRequired,
-    onClick: PropTypes.func.isRequired
-}
 
 export default Card;
