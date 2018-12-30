@@ -71,7 +71,10 @@ export default class MemoryGame extends Component {
         let dogs = []
         for(let i=0; i<10; i++) {
             axios
-            .get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime() )
+            .get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime(),
+            {
+                cache: false
+            }  )
             .then( res => dogs.push(res.data.message))
             .catch( err => console.log(err))
         }
