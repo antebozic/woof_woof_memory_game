@@ -69,19 +69,29 @@ export default class MemoryGame extends Component {
     getAllDogs() {
         let dogs = []
         for(let i=0; i<10; i++) {
-            axios
-            .get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime())
-            .then( res => {if(dogs.includes(res.data.message)){
-                return axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime())
-                .then(res => dogs.push(res.data.message));
-                }
-                else{
-                    dogs.push(res.data.message)
-                }
-                }
-            )
-            .catch( err => console.log(err))
+            fetch('https://dog.ceo/api/breeds/image/random')
+            .then(res => res.json())
+            .then(res => dogs.push(res.message))
         }
+        
+        // {
+        //     axios
+        //     .get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime())
+        //     //safari and mobile bug solution
+        //     .then( res => {if(dogs.includes(res.data.message)){
+        //         return axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime())
+        //         .then(res => dogs.push(res.data.message));
+        //         }
+        //         else{
+        //             dogs.push(res.data.message)
+        //         }
+        //         }
+        //     )
+        //     .catch( err => console.log(err))
+        // }
+
+        
+
 
         // axios.all([
         //     axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
