@@ -67,17 +67,42 @@ export default class MemoryGame extends Component {
     };
 
     getAllDogs() {
-        let ur = 'https://dog.ceo/api/breeds/image/random'
+        // let ur = 'https://dog.ceo/api/breeds/image/random'
         let dogs = []
-        for(let i=0; i<10; i++) {
-            axios
-            .get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime(),
-            {
-                cache: false
-            }  )
-            .then( res => dogs.push(res.data.message))
-            .catch( err => console.log(err))
-        }
+        // for(let i=0; i<10; i++) {
+        //     axios
+        //     .get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime())
+        //     .then( res => dogs.push(res.data.message))
+        //     .catch( err => console.log(err))
+        // }
+
+        axios.all([
+            axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
+            axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
+            axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
+            axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
+            axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
+            axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
+            axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
+            axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
+            axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
+            axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
+        ])
+        .then(axios.spread(
+            function(red, navy, yellow, green, black, purple, pink, lightsky, brown, white) {
+                dogs.push(red.data.message);
+                dogs.push(navy.data.message);
+                dogs.push(yellow.data.message);
+                dogs.push(green.data.message);
+                dogs.push(black.data.message);
+                dogs.push(purple.data.message);
+                dogs.push(pink.data.message);
+                dogs.push(lightsky.data.message);
+                dogs.push(brown.data.message);
+                dogs.push(white.data.message);
+            }
+        ))
+    
         setTimeout(
           () => {
             let cards = this.state.cards.map( c => {
@@ -120,7 +145,7 @@ export default class MemoryGame extends Component {
                 }
         })
             this.setState({cards, isVis: false})
-          }, 8000
+          }, 3000
         )
     }
 
@@ -134,7 +159,7 @@ export default class MemoryGame extends Component {
         this.setState({isVis: true})
         setTimeout(() => {
             this.setState({isVis: false})
-        }, 8000)
+        }, 3000)
         let cards = this.state.cards.map(c => ({
             ...c,
             cardState: CardState.HIDING
