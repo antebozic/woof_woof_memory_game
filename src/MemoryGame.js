@@ -162,11 +162,11 @@ export default class MemoryGame extends Component {
                 }
         })
             this.setState({cards, isVis: false})
-          }, 7000
+          }, 3000
         )
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.getAllDogs();
     }
 
@@ -176,7 +176,7 @@ export default class MemoryGame extends Component {
         this.setState({isVis: true})
         setTimeout(() => {
             this.setState({isVis: false})
-        }, 7000)
+        }, 3000)
         let cards = this.state.cards.map(c => ({
             ...c,
             cardState: CardState.HIDING
