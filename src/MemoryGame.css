@@ -58,6 +58,8 @@
     .content {
         padding-top: 2.5rem;
         /* height: 100%; */
+        padding-bottom: 3.5rem;
+        
     }
     .container {
         height: 100%;
@@ -72,9 +74,6 @@
     }
     .container {
         height: 100%;
-    }
-    .content {
-        padding-bottom: 3.5rem;
     }
 }
 
