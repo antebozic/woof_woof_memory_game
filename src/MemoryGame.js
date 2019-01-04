@@ -44,14 +44,34 @@ export default class MemoryGame extends Component {
         cards = this.shuffle(cards);
 
         this.state = {
-            cards, noClick: false, isVis: true
+            cards, noClick: false, isVis: true, width: 0
         };
 
         this.handleClick = this.handleClick.bind(this);
         this.handleNewGame = this.handleNewGame.bind(this);
         this.getAllDogs = this.getAllDogs.bind(this);
         this.shuffle = this.shuffle.bind(this);
+        this.updatedWindowDimensions = this.updatedWindowDimensions.bind(this);
     }
+
+    updatedWindowDimensions() {
+        if(window.innerWidth < 520) {
+            let cards = this.state.cards.filter( c =>
+                c.backgroundColor !== "white");
+            this.setState({
+                cards, width: window.innerWidth
+            })
+        }
+        else if(window.innerWidth > 520 && this.state.cards.length !== 20) {
+            let cards = this.state.cards;
+            cards.push(
+                {id: 18, cardState: CardState.HIDING, backgroundColor: 'white', backgroundImage: ''},
+                {id: 19, cardState: CardState.HIDING, backgroundColor: 'white', backgroundImage: ''}
+            );
+            this.setState({cards, width: window.innerWidth})
+        }
+    }
+
 
     shuffle(arr) {
         var i,
@@ -74,51 +94,6 @@ export default class MemoryGame extends Component {
             .then(res => dogs.push(res.message))
         }
         
-        // {
-        //     axios
-        //     .get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime())
-        //     //safari and mobile bug solution
-        //     .then( res => {if(dogs.includes(res.data.message)){
-        //         return axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime())
-        //         .then(res => dogs.push(res.data.message));
-        //         }
-        //         else{
-        //             dogs.push(res.data.message)
-        //         }
-        //         }
-        //     )
-        //     .catch( err => console.log(err))
-        // }
-
-        
-
-
-        // axios.all([
-        //     axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
-        //     axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
-        //     axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
-        //     axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
-        //     axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
-        //     axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
-        //     axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
-        //     axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
-        //     axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
-        //     axios.get('https://dog.ceo/api/breeds/image/random?nocache=' + new Date().getTime()), 
-        // ])
-        // .then(axios.spread(
-        //     function(red, navy, yellow, green, black, purple, pink, lightsky, brown, white) {
-        //         dogs.push(red.data.message);
-        //         dogs.push(navy.data.message);
-        //         dogs.push(yellow.data.message);
-        //         dogs.push(green.data.message);
-        //         dogs.push(black.data.message);
-        //         dogs.push(purple.data.message);
-        //         dogs.push(pink.data.message);
-        //         dogs.push(lightsky.data.message);
-        //         dogs.push(brown.data.message);
-        //         dogs.push(white.data.message);
-        //     }
-        // ))
     
         setTimeout(
           () => {
@@ -168,6 +143,9 @@ export default class MemoryGame extends Component {
 
     componentDidMount() {
         this.getAllDogs();
+        this.updatedWindowDimensions();
+        window.addEventListener("resize", this.updatedWindowDimensions);
+        
     }
 
     handleNewGame() {
