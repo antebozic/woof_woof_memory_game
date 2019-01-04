@@ -9,6 +9,7 @@ const Card = (props) => {
     if (props.opacity) {
         style.filter = 'grayscale(100%)'
         style.border = '.18rem solid #000'
+        style.opacity = '.9'
     } 
     return (
         <div 
