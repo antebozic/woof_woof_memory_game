@@ -3,8 +3,6 @@ import NavBar from './NavBar';
 import Card from './Card';
 import Dog from './Dog';
 import './MemoryGame.css';
-import axios from 'axios';
-
 
 const CardState = {
     HIDDING: 0,
@@ -44,7 +42,7 @@ export default class MemoryGame extends Component {
         cards = this.shuffle(cards);
 
         this.state = {
-            cards, noClick: false, isVis: true, isFin: false, width: 0, timestart: undefined, attempts: undefined, duration: undefined, click: 0
+            cards, noClick: false, isVis: true, isFin: false, width: 0, timestart: undefined, attempts: undefined, duration: undefined, click: 0, isMob: false
         };
 
         this.handleClick = this.handleClick.bind(this);
@@ -52,8 +50,17 @@ export default class MemoryGame extends Component {
         this.getAllDogs = this.getAllDogs.bind(this);
         this.shuffle = this.shuffle.bind(this);
         this.updatedWindowDimensions = this.updatedWindowDimensions.bind(this);
+        this.mobileCheck = this.mobileCheck.bind(this);
     }
 
+    mobileCheck() {
+        if(typeof window.orientation !== 'undefined') {
+            this.setState({
+                isMob: true
+            })
+        }
+    }
+    
     updatedWindowDimensions() {
         if(window.innerWidth < 520) {
             let cards = this.state.cards.filter( c =>
@@ -142,10 +149,10 @@ export default class MemoryGame extends Component {
     }
 
     componentDidMount() {
+        this.mobileCheck();
         this.getAllDogs();
         this.updatedWindowDimensions();
         window.addEventListener("resize", this.updatedWindowDimensions);
-        
     }
 
     handleNewGame() {
@@ -259,6 +266,13 @@ export default class MemoryGame extends Component {
                 "show" : this.state.isVis
             }
         )
+
+        var warClass = classNames(
+            {
+                "hideWar": !this.state.isMob,
+                "showWar": this.state.isMob
+            }
+        )
         const cards = this.state.cards.map((card) => (
             <Card 
                 key={card.id} 
@@ -293,6 +307,9 @@ export default class MemoryGame extends Component {
                 </div>
                 <div className={loadClass}>
                 <Dog />
+                </div>
+                <div className={warClass}>
+                    <h2>Please turn device in landscape mode! Woof!</h2>
                 </div>
             </div>
         );

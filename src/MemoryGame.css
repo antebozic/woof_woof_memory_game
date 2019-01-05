@@ -30,6 +30,12 @@
 .hide {
     display: none;
 }
+.hideWar {
+    display: none;
+}
+.showWar {
+    display: none;
+}
 
 @media (max-width: 75em){
     .cardsContainer {
@@ -97,6 +103,17 @@
     }
     .container {
         height: 100%;
+    }
+}
+
+@media (orientation: landscape) {
+    .showWar {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
