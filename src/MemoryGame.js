@@ -44,7 +44,7 @@ export default class MemoryGame extends Component {
         cards = this.shuffle(cards);
 
         this.state = {
-            cards, noClick: false, isVis: true, width: 0
+            cards, noClick: false, isVis: true, isFin: false, width: 0, timestart: undefined, attempts: undefined, duration: undefined, click: 0
         };
 
         this.handleClick = this.handleClick.bind(this);
@@ -162,13 +162,26 @@ export default class MemoryGame extends Component {
 
         cards = this.shuffle(cards);
 
-        this.setState({cards});
+        this.setState({cards, timestart: undefined, isFin: false, duration: undefined, attempts: undefined, click: 0});
 
         this.getAllDogs();
 
     }
 
     handleClick(id) {
+        // console.log(Math.round(new Date().getTime()/1000))
+        //adding click
+        this.setState((prevState, props) => {
+            return {
+                click: prevState.click+1
+            }
+        })
+        //adding first clikc timestamp
+        if(this.state.click === 1) {
+            this.setState({
+                timestart: Math.round(new Date().getTime()/1000)
+            })
+        }
         // 1.if two cards are visible and they don't match, put back
         // 2.if two cards are visible and they match, they should stay
 
@@ -217,9 +230,21 @@ export default class MemoryGame extends Component {
                 setTimeout(() => {
                     // set the state of the cards to HIDING after 1.5 seconds
                     this.setState({cards: hidingCards, noClick: false});
-                }, 1500);
+                }, 1200);
             }
             );   
+        }
+        //check for the game end 
+        let allMatching = cards.filter(c => c.cardState === CardState.MATCHING)
+        if (allMatching.length === cards.length) {
+            let duration = Math.round(new Date().getTime()/1000) - this.state.timestart;
+            let attempts = Math.round(this.state.click / 2);
+            this.setState({
+                duration, attempts, isFin: true
+            }, () => {
+                console.log(this.state.duration)
+                console.log(this.state.attempts)
+            })
         }
         this.setState({cards, noClick});
     }
@@ -256,7 +281,11 @@ export default class MemoryGame extends Component {
 
         return (
             <div className="container">
-                <NavBar onNewGame={this.handleNewGame}/>
+                <NavBar onNewGame={this.handleNewGame} 
+                        isFin={this.state.isFin} 
+                        duration={this.state.duration}
+                        attempts={this.state.attempts}
+                />
                 <div className="content">
                 <div className="cardsContainer" style={style}>
                 {cards}
