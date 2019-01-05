@@ -1,6 +1,10 @@
 /*Dog*/
 
 .bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #FA7268;
     height: 100vh;
     width: 100vw;
@@ -8,8 +12,8 @@
   }
   
   #dog {
-    width: 250px;
-    height: 300px;
+    width: 25rem;
+    height: 30rem;
     margin: 0 auto;
   }
   
@@ -18,9 +22,9 @@
   }
   
   .head {
-    width: 150px;
-    height: 67px;
-    border-radius: 0px 0px 0px 100px;
+    width: 15rem;
+    height: 6.7rem;
+    border-radius: 0rem 0rem 0rem 10rem;
     background-color: #B47A52;
     position: relative;
     z-index: 2;
@@ -29,56 +33,56 @@
     content: " ";
     width: 0;
     height: 0;
-    border-left: 23px solid transparent;
-    border-right: 23px solid transparent;
-    border-bottom: 67px solid #B47A52;
+    border-left: 2.3rem solid transparent;
+    border-right: 2.3rem solid transparent;
+    border-bottom: 6.7rem solid #B47A52;
     position: absolute;
-    top: 0px;
-    left: 127px;
+    top: 0rem;
+    left: 12.7rem;
   }
   
   .mask-head {
     overflow: hidden;
-    width: 150px;
-    height: 67px;
-    border-radius: 0px 0px 0px 100px;
+    width: 15rem;
+    height: 6.7rem;
+    border-radius: 0rem 0rem 0rem 10rem;
   }
   
   .nose {
     background-color: #EEF4D4;
-    width: 58px;
-    height: 100px;
+    width: 5.8rem;
+    height: 10rem;
     transform: rotate(-17deg);
     position: relative;
-    top: -10px;
+    top: -1rem;
     /*  opacity: 0;*/
   }
   .nose::after {
     background-color: #2F434E;
     content: '';
-    width: 20px;
-    height: 20px;
+    width: 2rem;
+    height: 2rem;
     border-radius: 100%;
     position: absolute;
-    top: 0px;
-    left: 7px;
+    top: 0rem;
+    left: .7rem;
   }
   
   .eye {
-    width: 10px;
-    height: 10px;
+    width: 1rem;
+    height: 1rem;
     background-color: #20201E;
-    border-radius: 50px;
+    border-radius: 5rem;
     position: absolute;
-    top: 15px;
-    left: 77px;
+    top: 1.5rem;
+    left: 7.7rem;
   }
   
   .ear {
     background-color: #8D4F3A;
-    width: 57px;
-    height: 103px;
-    border-radius: 0 0 50px 50px;
+    width: 5.7rem;
+    height: 10.3rem;
+    border-radius: 0 0 5rem 5rem;
     right: 0;
     position: absolute;
     top: 0;
@@ -86,10 +90,10 @@
   }
   
   .body {
-    width: 81px;
-    height: 200px;
+    width: 8.1rem;
+    height: 20rem;
     position: relative;
-    left: 92px;
+    left: 9.2rem;
     background-color: #3d484e;
     z-index: 1;
     float: left;
@@ -97,59 +101,59 @@
   .body::after {
     background-color: #EF4023;
     content: '';
-    width: 35px;
-    height: 20px;
+    width: 3.5rem;
+    height: 2rem;
     position: absolute;
     top: 0px;
     right: 0px;
   }
   
   .mask-body {
-    width: 81px;
-    height: 200px;
+    width: 8.1rem;
+    height: 20rem;
     overflow: hidden;
     position: relative;
   }
   .mask-body::before {
     background-color: #242B31;
     content: '';
-    width: 192px;
-    height: 196px;
+    width: 19.2rem;
+    height: 19.6rem;
     border-radius: 100%;
     position: absolute;
-    bottom: -100px;
-    left: 44px;
+    bottom: -10rem;
+    left: 4.4rem;
   }
   
   .leg {
     width: 0;
     height: 0;
-    border-left: 44px solid transparent;
-    border-right: 44px solid transparent;
-    border-bottom: 132px solid #EEF4D4;
+    border-left: 4.4rem solid transparent;
+    border-right: 4.4rem solid transparent;
+    border-bottom: 13.2rem solid #EEF4D4;
     position: absolute;
-    left: -44px;
+    left: -4.4rem;
     bottom: 0;
   }
   
   .foot {
     width: 0;
     height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 20px solid #EEF4D4;
+    border-left: 2rem solid transparent;
+    border-right: 2rem solid transparent;
+    border-bottom: 2rem solid #EEF4D4;
     position: absolute;
-    left: -20px;
+    left: -2rem;
     bottom: 0;
   }
   
   .back-body {
-    width: 60px;
-    height: 200px;
+    width: 6rem;
+    height: 20rem;
     background-color: #3d484e;
     position: relative;
     overflow: hidden;
-    right: 50px;
+    right: 5rem;
     z-index: 1;
     transform: skewX(15deg);
     float: right;
@@ -157,29 +161,29 @@
   .back-body::after {
     background-color: #242B31;
     content: '';
-    width: 192px;
-    height: 196px;
+    width: 19.2rem;
+    height: 19.6rem;
     border-radius: 100%;
     position: absolute;
-    top: 110px;
-    left: -21px;
+    top: 11rem;
+    left: -2.1rem;
   }
   .back-body::before {
     background-color: #4D9DE0;
     content: '';
-    width: 35px;
-    height: 20px;
+    width: 3.5rem;
+    height: 2rem;
     position: absolute;
     top: 0px;
     right: 0px;
   }
   
   .mask-tail {
-    width: 50px;
-    height: 150px;
+    width: 5rem;
+    height: 15rem;
     position: relative;
-    left: 40px;
-    top: 50px;
+    left: 4rem;
+    top: 5rem;
     float: right;
     overflow: hidden;
   }
@@ -187,33 +191,33 @@
     content: " ";
     width: 0;
     height: 0;
-    border-left: 43px solid transparent;
-    border-right: 43px solid transparent;
-    border-bottom: 150px solid #3d484e;
+    border-left: 4.3rem solid transparent;
+    border-right: 4.3rem solid transparent;
+    border-bottom: 15rem solid #3d484e;
     position: absolute;
-    bottom: 0px;
-    left: 6px;
+    bottom: 0rem;
+    left: .6rem;
   }
   .mask-tail::after {
     content: " ";
     width: 0;
     height: 0;
-    border-left: 10px solid transparent;
-    border-right: 14px solid transparent;
-    border-bottom: 36px solid #FFFFFF;
+    border-left: 1rem solid transparent;
+    border-right: 1.4rem solid transparent;
+    border-bottom: 3.6rem solid #FFFFFF;
     position: absolute;
-    top: -2px;
-    left: 38px;
+    top: -.2rem;
+    left: 3.8rem;
   }
   
   .shirt {
-    width: 50px;
-    height: 5px;
-    border-radius: 90px 20px 0 40px;
+    width: 5rem;
+    height: .5rem;
+    border-radius: 9rem 2rem 0 4rem;
     background-color: #EF4023;
     position: absolute;
-    top: -14px;
-    right: 123px;
+    top: -1.4rem;
+    right: 12.3rem;
     z-index: 0;
     transform: rotate(-17deg);
   }
@@ -222,14 +226,14 @@
   /*Loading...*/
 
   .spinner {
-    margin: 1px auto 0;
-    width: 70px;
+    margin: .1rem auto 0;
+    width: 7rem;
     text-align: center;
   }
   
   .spinner > div {
-    width: 20px;
-    height: 20px;
+    width: 2rem;
+    height: 2rem;
     background-color: #4D9DE0;
   
     border-radius: 100%;
