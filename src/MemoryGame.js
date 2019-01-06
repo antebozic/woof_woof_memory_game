@@ -266,7 +266,6 @@ export default class MemoryGame extends Component {
                 "show" : this.state.isVis
             }
         )
-
         var warClass = classNames(
             {
                 "hideWar": !this.state.isMob,
