@@ -35,6 +35,9 @@
 .woof {
     color: #4D9DE0;
 }
+.exc {
+    color: #EEF4D4;
+}
 
 @media (max-width: 75em){
     .cardsContainer {
