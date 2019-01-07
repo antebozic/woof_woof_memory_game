@@ -32,6 +32,10 @@
     display: none;
 }
 
+.woof {
+    color: #4D9DE0;
+}
+
 @media (max-width: 75em){
     .cardsContainer {
         grid-template-rows: repeat(4, 13rem);
