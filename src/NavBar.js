@@ -15,7 +15,7 @@ const NavBar = ({onNewGame, isFin, attempts, duration}) => {
    else {
     return(
         <header>
-            <h2><a><span className="results1">{attempts}</span> attempts in <span className="results2">{duration}</span> sec, Woof!</a></h2>
+            <h2><a><span className="results2">{attempts}</span> attempts in <span className="results2">{duration}</span> sec, Woof<span className="results1">!</span></a></h2>
             <nav>
                 <li><a onClick={onNewGame} className="btn" id="slide">New Game</a></li>
             </nav>
