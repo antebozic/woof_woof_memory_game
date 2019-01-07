@@ -25,6 +25,14 @@ li {
     padding: 5px;
 }
 
+.results1 {
+    color: #4D9DE0;
+}
+
+.results2 {
+    color: #EEF4D4;
+}
+
 #slide {
     all: unset;
     transition: color .3s ease-in-out;

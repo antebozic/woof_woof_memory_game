@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/woof/static/js/runtime~main.d38e75a6.js"
   },
   {
-    "revision": "7e2d78a2ca55b60f507b",
-    "url": "/woof/static/js/main.7e2d78a2.chunk.js"
+    "revision": "bb5c972ea26ef48768bd",
+    "url": "/woof/static/js/main.bb5c972e.chunk.js"
   },
   {
     "revision": "e49c2389bb712159f258",
     "url": "/woof/static/js/1.e49c2389.chunk.js"
   },
   {
-    "revision": "7e2d78a2ca55b60f507b",
-    "url": "/woof/static/css/main.456088c1.chunk.css"
+    "revision": "bb5c972ea26ef48768bd",
+    "url": "/woof/static/css/main.78d7f591.chunk.css"
   },
   {
-    "revision": "b93d5b56c370fc45a5309c8cb41a9022",
+    "revision": "2b220edfb50910cd85b83efaa4f9060c",
     "url": "/woof/index.html"
   }
 ];
