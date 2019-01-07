@@ -308,7 +308,7 @@ export default class MemoryGame extends Component {
                 <Dog />
                 </div>
                 <div className={warClass}>
-                    <h2>Turn device in portrait mode<span className="exc">!</span> <span className="woof">Woof</span><span className="exc">!</span></h2>
+                    <h2>Turn device in portrait mode<span className="exc">!</span> Woof<span className="exc">!</span></h2>
                 </div>
             </div>
         );
