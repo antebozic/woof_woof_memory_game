@@ -53,6 +53,7 @@
     background-color: #FA7268;
     font-family: 'Inconsolata', monospace;
     font-size: 3.5rem;
+    padding: 0 4rem;
 }
 
 @media (max-width: 75em){
