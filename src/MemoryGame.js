@@ -313,7 +313,7 @@ export default class MemoryGame extends Component {
                 </div>
                 <Offline>
                     <div className="showConn">
-                        <h2>There is a problem with your internet conneciton<span className="exc">!</span> Woof<span className="exc">!</span></h2>
+                        <h2>There is a problem with your internet connection<span className="exc">!</span> Woof<span className="exc">!</span></h2>
                     </div>
                 </Offline>
             </div>
