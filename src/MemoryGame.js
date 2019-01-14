@@ -3,6 +3,7 @@ import NavBar from './NavBar';
 import Card from './Card';
 import Dog from './Dog';
 import './MemoryGame.css';
+import { Offline, Online } from "react-detect-offline";
 
 const CardState = {
     HIDDING: 0,
@@ -101,7 +102,6 @@ export default class MemoryGame extends Component {
             .then(res => dogs.push(res.message))
         }
         
-    
         setTimeout(
           () => {
             let cards = this.state.cards.map( c => {
@@ -272,6 +272,7 @@ export default class MemoryGame extends Component {
                 "showWar": this.state.isMob
             }
         )
+       
         const cards = this.state.cards.map((card) => (
             <Card 
                 key={card.id} 
@@ -301,15 +302,20 @@ export default class MemoryGame extends Component {
                 />
                 <div className="content">
                 <div className="cardsContainer" style={style}>
-                {cards}
+                    {cards}
                 </div>
                 </div>
                 <div className={loadClass}>
-                <Dog />
+                    <Dog />
                 </div>
                 <div className={warClass}>
                     <h2>Turn device in portrait mode<span className="exc">!</span> Woof<span className="exc">!</span></h2>
                 </div>
+                <Offline>
+                    <div className="showConn">
+                        <h2>There is a problem with your internet conneciton<span className="exc">!</span> Woof<span className="exc">!</span></h2>
+                    </div>
+                </Offline>
             </div>
         );
     }
